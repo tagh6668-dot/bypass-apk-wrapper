@@ -33,7 +33,7 @@ jobs:
     - name: Compile Java
       run: |
         mkdir -p obj
-        javac -bootclasspath ${{ env.ANDROID_JAR }} -d obj app/src/main/java/com/bypass/*.java
+        javac -classpath ${{ env.ANDROID_JAR }} -d obj app/src/main/java/com/bypass/*.java
 
     - name: Dex Compilation
       run: |
