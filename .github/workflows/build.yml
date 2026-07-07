@@ -57,7 +57,7 @@ jobs:
     - name: Sign APK
       run: |
         keytool -genkeypair -v -keystore my.keystore -alias mykey -keyalg RSA -keysize 2048 -validity 10000 -storepass 123456 -keypass 123456 -dname "CN=bypass, O=bypass, C=US"
-        ${{ env.BUILD_TOOLS_DIR }}/apksigner sign --ks my.keystore --ks-key-alias mykey --ks-pass pass:123456 --key-pass pass:123456 --out BypassClient.apk app-unsigned.apk
+        ${{ env.BUILD_TOOLS_DIR }}/apksigner sign --ks my.keystore --ks-key-alias mykey --ks-pass pass:123456 --key-pass pass:123456 --out bin/BypassClient.apk bin/app-unsigned.apk
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
